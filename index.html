@@ -69,11 +69,11 @@ Vos - Se me está inundando la oficina, no deja de entrar agua
 Kato - Ah...
 Vos - ¿Qué?
 Kato - Que el biólogo, este chico Pablo, me contó dijo que te avise que se está derritiendo el hielo Antártico re-rápido. Debe ser eso lo que pasa, porque acá también se llenó todo de agua
-Luna - Ah, bueno, veo qué hago
+Vos - Ah, bueno, veo qué hago
 Kato - Sí, vos fíjate, yo al principio pensé que me estaba pidiendo que te pase una invitación para esas cosas que hacen ustedes, je, je
-Luna - Pablo y yo no cogemos Kato
+Vos - Pablo y yo no cogemos, Kato
 Kato - Sí, sí, bueno, vos fíjate si podés hacer algo, porque el Malevo se llevó el gomón y todavía no te podemos pasar a buscar
-Luna - Bueno, Gracias
+Vos - Bueno, Gracias
 Cortás (set: $radio to true)
 ]\
 
@@ -160,7 +160,7 @@ Necesitás algo para poder sacar el molde de queso de la cerradura, creés que l
 ](else:)[\
 El pistón está en el submarino, el depósito de metales que está a la vuelta de tu oficina, te acercás y ves que está cerrado con llave, crees que la llave puede estar en tu oficina. Así que [[la pasás a buscar-&gt;oficina]].
 ]</tw-passagedata>
-<tw-passagedata pid="13" name="espectro" tags="" position="414,1480">Subís al altillo de tu oficina para agarrar el analizador de espectro, el lugar está lleno de dildos, fleshlights y chatarra electrónica, estás seguro de que habías tirado los dildos y las fleshlights la semana pasada, no sabés por qué están acá de nuevo.
+<tw-passagedata pid="13" name="espectro" tags="" position="414,1480">Subís al altillo de tu oficina para agarrar el analizador de espectro. El lugar está lleno de dildos, fleshlights y chatarra electrónica. Estás seguro de que habías tirado los dildos y las fleshlights la semana pasada, no sabés por qué están acá de nuevo.
 (click: &quot;analizador de espectro&quot;)[(set: $inventory to it + (a:&quot;medidor&quot;))]\
 
 (live:2s)[(if: $inventory contains &quot;medidor&quot;)[\
@@ -179,7 +179,7 @@ El molde te ayuda a encontrar la llave sin problemas. [[La agarrás y vas a busc
 (set: $inventory to it + (a: &quot;llave&quot;))
 }
 ](else:)[\
-Volvés a tu oficina y revisás un panel en la pared que tiene todas las llaves de la base, son bocha de llaves y te da tremenda paja probarlas una por una. [[Revisás la heladera-&gt;heladera]] para ver si picás algo y juntás energías para seguir.
+Volvés a tu oficina y revisás un panel en la pared que tiene todas las llaves de la base. Son bocha de llaves y te da tremenda paja probarlas una por una. [[Revisás la heladera-&gt;heladera]] para ver si picás algo y juntás energías para seguir.
 ]
 (if: $inventory contains &quot;medidor&quot;)[\
 Ya tenés el medidor, así que te merecés un descanso.
