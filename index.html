@@ -47,17 +47,18 @@ tw-passage{
 Por Florencia Rumpel Rodriguez
 
 [[Empezar]]</tw-passagedata>
-<tw-passagedata pid="2" name="Empezar" tags="" position="508,410">Hoy llueve a cántaros en la Antártida, vos estás en tu oficina, un ranchito de dos pisos con forma de cabildo. Estabas desinstalando basura de PCs con Windows XP, pero de golpe empezás a sentir que tenés las patas mojadas.
+<tw-passagedata pid="2" name="Empezar" tags="" position="507,410">Hoy llueve a cántaros en la Antártida, vos estás en tu oficina, un ranchito de dos pisos con forma de cabildo. Estabas desinstalando basura de PCs con Windows XP, pero de golpe empezás a sentir que tenés las patas mojadas.
 
 [[Te levantás a ver qué onda-&gt;levantarse]].</tw-passagedata>
 <tw-passagedata pid="3" name="levantarse" tags="" position="508,535">Revisás los potes vacíos de helado en balde que usan para contener las goteras, están llenos, así que [[los vaciás y volvés a acomodar-&gt;vaciar_balde]].</tw-passagedata>
-<tw-passagedata pid="4" name="vaciar_balde" tags="" position="508,660">Notás que es al pedo porque te sigue tapando el agua. Necesitás encontrar una forma para evitar que se te llene de agua el ranchito.\
-
-(set: $tapon to false)\
-(set: $radio to false)\
-
+<tw-passagedata pid="4" name="vaciar_balde" tags="" position="506,660">Notás que es al pedo porque te sigue tapando el agua. Necesitás encontrar una forma para evitar que se te llene de agua el ranchito.\
+{
+(set: $tapon to false)
+(set: $radio to false)
+(set: $heladera to false)
+}\
 Podés [[revisar la habitación]] o [[pedir ayuda con la radio-&gt;radio]].</tw-passagedata>
-<tw-passagedata pid="5" name="revisar la habitación" tags="" position="508,796">Las paredes de la habitación son de machimbre y hay un sector distinto al resto(click-replace:&quot;un sector distinto al resto&quot;)[un panel que abre una heladera]. Los pisos son de goma y madera, hay un cachito de goma medio salido para arriba.(click-append:&quot;cachito de goma medio salido para arriba.&quot;)[ Lo levantás y ves que hay un agujero enorme, por el que se empieza a escurrir el agua. (set: $tapon to true)]\
+<tw-passagedata pid="5" name="revisar la habitación" tags="" position="508,796">Las paredes de la habitación son de machimbre y hay un sector distinto al resto(click-replace:&quot;un sector distinto al resto&quot;)[un panel que abre una heladera(set: $heladera to true)]. Los pisos son de goma y madera, hay un cachito de goma medio salido para arriba.(click-append:&quot;cachito de goma medio salido para arriba.&quot;)[ Lo levantás y ves que hay un agujero enorme, por el que se empieza a escurrir el agua. (set: $tapon to true)]\
 
 (live:2s)[(if: $tapon is true)[\
 Sigue todo inundado, pero es un poco más manejable y estás casi seguro de que no te vas a ahogar. (if: $radio is false)[Por ahí te conviene [[llamar a la base-&gt;radio]].](else-if: $radio is true)[Deberías [[revisar el monitor-&gt;ver_monitor]].]
@@ -179,8 +180,16 @@ El molde te ayuda a encontrar la llave sin problemas. [[La agarrás y vas a busc
 (set: $inventory to it + (a: &quot;llave&quot;))
 }
 ](else:)[\
-Volvés a tu oficina y revisás un panel en la pared que tiene todas las llaves de la base. Son bocha de llaves y te da tremenda paja probarlas una por una. [[Revisás la heladera-&gt;heladera]] para ver si picás algo y juntás energías para seguir.
-]
+Volvés a tu oficina y revisás un panel en la pared que tiene todas las llaves de la base. Son bocha de llaves y te da tremenda paja probarlas una por una. 
+
+(if: $heladera is true)[\
+[[Revisás la heladera-&gt;heladera]] para ver si picás algo y juntás energías para seguir.\
+](else:)[\
+Notás que en el machimbre de las paredes hay un sector distinto al resto.(click-append:&quot;hay un sector distinto al resto.&quot;)[Encontrás una heladera y [[decidís revisarla-&gt;heladera]].]
+]\
+]\
+
+
 (if: $inventory contains &quot;medidor&quot;)[\
 Ya tenés el medidor, así que te merecés un descanso.
 ](else:)[\
